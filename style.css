@@ -1,0 +1,326 @@
+:root {
+    
+    
+    /* FONT */
+
+    --ff-hanken: 'Hanken Grotesk', sans-serif;
+
+    /* COLOR */
+
+    /* ### Primary */
+
+    --light-red: hsl(0, 100%, 67%);
+    --orangey-yellow: hsl(39, 100%, 56%);
+    --green-teal: hsl(166, 100%, 37%);
+    --cobalt-blue: hsl(234, 85%, 45%);
+
+    /* ## Gradients */
+
+    --light-slate-blue: hsl(252, 100%, 67%);
+    --light-royal-blue: hsl(241, 81%, 54%);
+
+    --violet-blue: hsla(256, 72%, 46%, 1);
+    --persian-blue: hsla(241, 72%, 46%, 0);
+
+
+
+    /* ### Neutral */
+
+    --white: hsl(0, 0%, 100%);
+    --pale-blue: hsl(221, 100%, 96%);
+    --light-lavender: hsl(241, 100%, 89%);
+    --dark-gray-blue: hsl(224, 30%, 27%);
+}
+
+
+/* !GLOBAL RESET */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.8rem;
+    display: grid;
+    place-items: center;
+    font-family: var(--ff-hanken);
+    color: var(--white);
+}
+
+main {
+  display: flex;
+  width: 70rem;
+  
+}
+
+.result {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to bottom right, hsl(252, 100%, 67%), hsl(241, 81%, 54%));
+  width: 35rem;
+  text-align: center;
+  padding: 5rem 3rem;
+  border-radius: 3rem;
+}
+
+.result-point {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 20rem;
+  height: 20rem;
+  border-radius: 50%;
+  margin: 2.5rem 0;
+  background: linear-gradient(hsla(256, 72%, 46%, 1), hsla(241, 72%, 46%, 0));
+}
+
+.result h2 {
+  line-height: 1;
+  margin-bottom: 2rem;
+}
+
+.result h3 {
+  color: var(--light-lavender);
+}
+
+.result-point h1 {
+  
+  line-height: 1;
+  font-size: 8rem;
+}
+
+.result-point .result-test {
+  color: var(--light-lavender);
+}
+
+.result .result-explaination {
+  width: 25ch;
+  line-height: 1.3;
+  color: var(--light-lavender);
+}
+
+.summary {
+  width: 35rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: var(--white);
+  padding: 5rem 3rem;
+  color: var(--dark-gray-blue);
+  box-shadow: 8px 17px 15px -3px rgba(0,0,0,0.1);
+  border-top-right-radius: 3rem;
+  border-bottom-right-radius: 3rem;
+}
+
+.summary .summary-result {
+  display: flex;
+  margin: 3rem 0;
+  gap: 1.5rem;
+  flex-direction: column;
+}
+
+.summary h3 {
+  color: var(--dark-gray-blue);
+  
+}
+
+.summary .summary-list {
+  display: flex;
+  justify-content: space-between;
+  gap: 7rem;
+  padding: 1.5rem;
+  font-weight: 700;
+  font-size: 1.8rem;
+  border-radius: 1rem;
+
+}
+
+.summary-list .group {
+  display: flex;
+  
+}
+
+.summary .summary-reaction {
+  background-color: hsl(0, 100%, 67%, .1);
+  
+}
+
+.summary .summary-memory {
+  background-color: hsl(39, 100%, 56%, .1);
+  
+}
+
+.summary .summary-verbal {
+  background-color: hsl(166, 100%, 37%, .1);
+  
+}
+.summary .summary-visual {
+  background-color: hsl(234, 85%, 45%, .1);
+  
+}
+
+.summary-reaction .summary-text{
+  color: var(--light-red);
+}
+
+.summary-memory .summary-text{
+  color: var(--orangey-yellow);
+}
+.summary-verbal .summary-text{
+  color: var(--green-teal);
+}
+.summary-visual .summary-text{
+  color: var(--cobalt-blue);
+}
+
+
+.summary-list .summary-points {
+  font-weight: 800;
+}
+
+.summary-list .summary-points span{
+  color: var(--light-lavender);
+}
+  
+.summary button {
+  background-color: var(--dark-gray-blue);
+  color: var(--white);
+  border: none;
+  padding: 1rem;
+  border-radius: 2rem;
+}
+
+.summary button:hover, .summary button:focus {
+  cursor: pointer;
+  background: linear-gradient(hsl(252, 100%, 67%),hsl(241, 81%, 54%));
+}
+
+.group img {
+  margin-right: 1rem;
+}
+
+
+
+
+@media (max-width: 700px) {
+
+
+  main {
+    flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 35rem;
+  }
+
+  .result {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+}
+
+@media (max-width: 375px) {
+  main {
+    font-size: 1.6rem;
+    max-width: 37.5rem;
+
+  }
+
+  .result , .summary {
+    max-width: 37.5rem;
+    padding: 4rem 0;
+  }
+
+  .result-point {
+    width: 15rem;
+    height: 15rem;
+  }
+
+  .result-point h1 {
+    font-size: 6rem;
+  }
+
+  .result .result-explaination {
+    width: 30ch;
+  }
+
+  .summary .summary-list {
+    font-size: 1.6rem;
+  }
+}
